@@ -2,7 +2,7 @@
 
 Esse repositório armazena um projeto de uma Pokédex e de um Jogo da Velha (feitos com a tecnologia React).
 No menu, configurado com 2 rotas, na primeira se encontra a Pokédex, que foi criada a partir de uma API de Pokémons.
-E um jogo da velha clássico que demonstra quem ganhou ou se deu empate.
+E na segunda, um jogo da velha clássico que demonstra quem ganhou ou se deu empate.
 
 Link da API utilizada:
 https://pokeapi.co/ 
