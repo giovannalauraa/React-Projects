@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import PokemonTable from "../components/PokemonTable";
 
+// Uma função componente que retornaria o perfil do pokémon 
 export const Profile = ({ pokemonData }) => {
   const { name, sprites, moves } = pokemonData || {};
   const navigate = useNavigate();
