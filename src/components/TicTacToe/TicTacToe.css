@@ -1,0 +1,198 @@
+/*Importando a fonte no estilo de pixels*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*Zerando o css*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Estilos para o body*/
+body {
+    background: #968d8d;
+    font-family: consolas;
+    background-image: url(../../assets/fundoPokemon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*Posicionando a tabela do jogo da velha*/
+.tic-tac-toe {
+    width: fit-content;
+    margin: 40px auto;
+    text-align: center;
+    margin-left: 20%;
+}
+
+/*Estilizado o botão para reiniciar o jogo da velha*/
+.tic-tac-toe button {
+    padding: 8px 12px;
+    margin: 20px;
+    margin-top: 0px;
+    background-color: #004242;
+    border: 2px solid #eee;
+    color: #eee;
+    width: 120px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Hover para o botão de reinicializar o jogo*/
+.tic-tac-toe button:hover {
+    background: #eee;
+    color: #222;
+}
+/*Estilos para os quadrados do jogo ficarem corretamente posicionados*/
+.tic-tac-toe .game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+/*Turn = estilos para informar com a troca de contrastes qual será
+  o próximo jogador: X ou O*/
+.turn {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: fit-content;
+    position: relative;
+    border-radius: 10px;
+}
+
+.turn .square,
+.winner .square {
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    border-color: transparent;
+}
+
+.turn .square span.x::before,
+.turn .square span.x::after {
+    background: #222;
+    transition: 0.2s;
+}
+
+.turn .square span.o {
+    transition: 0.2s;
+    border-color: #222;
+}
+
+.turn::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background: #49ff58;
+    border-radius: 9px;
+    z-index: -1;
+    transition: 0.2s;
+}
+
+.turn.left::after {
+    left: 0;
+}
+
+.turn.left span.o {
+    border-color: #eee;
+}
+.turn.right span.x::before,
+.turn.right span.x::after {
+    background: #eee;
+}
+.turn.right::after {
+    left: 50%;
+}
+
+/*Winner = Estilos para mostrar quem é o vencedor ou se deu velha*/
+.winner {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.winner .text {
+    background: cadetblue;
+    width: 70%;
+    max-width: 400px;
+    height: 300px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.winner .text h2 {
+    font-size: 2.5em;
+    margin: 15px 0;
+    color: #eee;
+}
+
+.winner .win {
+    margin: 0 auto;
+    width: fit-content;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+/*Estilos para o gif do Bulbasaur*/
+.bulbasaur{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*Estilos para posicionar o jogo da velha e o gif do Bulbasaur lado a lado*/
+.flex-jogo-imagem{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Estilos para a logo do Pokévelha*/
+.titulo-logo{
+    width: 65%;
+    margin: 0 auto;
+}
+
+/*Estilos para posicionar a logo acima do gif do Bulbasaur*/
+.imagens-poke{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Responsividade do jogo*/
+@media screen and (max-width: 768px) {
+    .flex-jogo-imagem{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .bulbasaur{
+        width: 45%;
+        margin-top: 2%;
+    }
+
+    .tic-tac-toe {
+        margin: 0 auto;
+    }
+
+    .imagens-poke{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
