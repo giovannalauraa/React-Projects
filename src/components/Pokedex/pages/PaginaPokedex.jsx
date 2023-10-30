@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import PokemonCard from "../components/PokemonCard";
 import { Skeletons } from "../components/Skeletons";
 
+// Componente que retorna os pokemons da API e o pokémon pesquisado
 export const Home = ({ setPokemonData }) => {
   const [pokemons, setPokemons] = useState([]);
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export const Home = ({ setPokemonData }) => {
     getPokemons();
   }, []);
 
+  // Função que busca os pokémons da API
   const getPokemons = () => {
     var endpoints = [];
     for (var i = 1; i < 200; i++) {
@@ -23,6 +25,7 @@ export const Home = ({ setPokemonData }) => {
     axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
   };
 
+  // Função que filtra o pokémon pelo nome pesquisado
   const pokemonFilter = (name) => {
     var filteredPokemons = [];
     if (name === "") {
